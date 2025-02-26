@@ -18,7 +18,8 @@ defmodule CoinExchange.Application do
       # {CoinExchange.Worker, arg},
       # Start to serve requests, typically the last entry
       CoinExchangeWeb.Endpoint,
-      CoinExchange.EventStore
+      CoinExchange.EventStore,
+      {CoinExchange.App.Router, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -1,6 +1,7 @@
 defmodule CoinExchange.App.Aggregates.Customer do
   defstruct [:id, :nickname, :assets, :funds]
 
+  alias CoinExchange.Customers.Customer
   alias CoinExchange.App.Commands.{CreateCustomer, SellCoins, BuyCoins}
   alias CoinExchange.App.Events.{CustomerCreated, CoinsSold, CoinsBought}
 
