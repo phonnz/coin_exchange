@@ -62,7 +62,8 @@ defmodule CoinExchange.MixProject do
       {:commanded, "~> 1.4"},
       {:commanded_ecto_projections, "~> 1.4"},
       {:eventstore, "~> 1.4"},
-      {:redix, "~> 1.1"}
+      {:redix, "~> 1.1"},
+      {:uuid, "~> 1.1"}
     ]
   end
 

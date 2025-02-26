@@ -64,6 +64,12 @@ config :phoenix, :json_library, Jason
 config :coin_exchange, event_stores: [CoinExchange.EventStore]
 # default_database: "coin_exchange_eventstore",
 
+config :coin_exchange, CoinExchange.App.Application,
+  event_store: [
+    adapter: Commanded.EventStore.Adapters.EventStore,
+    event_store: CoinExchange.EventStore
+  ]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

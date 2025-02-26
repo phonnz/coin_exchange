@@ -1,0 +1,35 @@
+<h1>Coin Exchange</h1>
+
+<h2>Create Customer</h2>
+<form phx-submit="create_customer">
+  <input type="text" name="nickname" placeholder="Nickname" />
+  <button type="submit">Create</button>
+</form>
+
+<h2>Sell Coins</h2>
+<form phx-submit="sell_coins">
+  <select name="customer_id">
+    <%= for customer <- @customers do %>
+      <option value={customer.id}>{customer.nickname}</option>
+    <% end %>
+  </select>
+  <input type="number" name="coins" placeholder="Coins" />
+  <input type="number" name="price" placeholder="Price" />
+  <button type="submit">Sell</button>
+</form>
+
+<h2>Buy Coins</h2>
+<%= for offer <- @offers do %>
+  <div>
+    <p>Coins: {offer.coins}, Price: {offer.price}</p>
+    <form phx-submit="buy_coins">
+      <input type="hidden" name="offer_id" value="{ offer.id }" />
+      <select name="buyer_id">
+        <%= for customer <- @customers do %>
+          <option value="{ customer.id }">{customer.nickname}</option>
+        <% end %>
+      </select>
+      <button type="submit">Buy</button>
+    </form>
+  </div>
+<% end %>
