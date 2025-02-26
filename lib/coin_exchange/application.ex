@@ -17,7 +17,8 @@ defmodule CoinExchange.Application do
       # Start a worker by calling: CoinExchange.Worker.start_link(arg)
       # {CoinExchange.Worker, arg},
       # Start to serve requests, typically the last entry
-      CoinExchangeWeb.Endpoint
+      CoinExchangeWeb.Endpoint,
+      CoinExchange.EventStore
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
