@@ -16,10 +16,8 @@ defmodule CoinExchange.Application do
       {Finch, name: CoinExchange.Finch},
       # Start a worker by calling: CoinExchange.Worker.start_link(arg)
       # {CoinExchange.Worker, arg},
-      # Start to serve requests, typically the last entry
-      CoinExchangeWeb.Endpoint,
       CoinExchange.EventStore,
-      {CoinExchange.App.Router, []}
+      CoinExchangeWeb.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

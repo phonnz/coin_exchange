@@ -1,5 +1,5 @@
 defmodule CoinExchange.Customers.Customer do
-  alias Postgrex.Extensions.Array
+  # alias Postgrex.Extensions.Array
   use Ecto.Schema
   import Ecto.Changeset
 

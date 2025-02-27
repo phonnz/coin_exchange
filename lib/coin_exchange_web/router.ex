@@ -19,7 +19,7 @@ defmodule CoinExchangeWeb.Router do
 
   scope "/", CoinExchangeWeb do
     pipe_through :browser
-
+live "/", ExchangeLive
     live "/customers", CustomerLive.Index, :index
     live "/customers/new", CustomerLive.Index, :new
     live "/customers/:id/edit", CustomerLive.Index, :edit
