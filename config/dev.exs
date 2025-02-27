@@ -83,3 +83,22 @@ config :phoenix_live_view,
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+config :coin_exchange, CoinExchange.EventStore,
+  serializer: Commanded.Serialization.JsonSerializer,
+  username: "postgres",
+  password: "adminadmin",
+  database: "coin_exchange_eventstore",
+  hostname: "localhost"
+
+config :coin_exchange, CoinExchange.EventStore.App,
+  event_stores: [
+    adapter: Commanded.EventStore.Adapters.EventStore,
+    event_store: CoinExchange.EventStore
+  ]
+
+## config :coin_exchange,
+##  event_stores: [
+##    adapter: Commanded.EventStore.Adapters.EventStore,
+##    event_store: CoinExchange.EventStore
+##  ]
